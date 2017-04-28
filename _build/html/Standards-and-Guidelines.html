@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Git and Github &#8212; Runaterra 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Runaterra 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Welcome to Runaterra’s Standards and Guidelines page.</p>
+<p>Here you’ll find information about the <strong>Do’s</strong> and <strong>Don’ts</strong> when
+working on this project. These rules exists to keep the code base and
+project history manageable while still allowing contributors to be
+productive.</p>
+<blockquote>
+<div>This document’s intention is to provide maximal guidance while
+providing reasonable restrictions. Nevertheless, common sense should
+always prevail and each individual situations should be handled
+accordingly.</div></blockquote>
+<div class="section" id="git-and-github">
+<h1>Git and Github<a class="headerlink" href="#git-and-github" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div>The following rules and conventions should be followed across all
+Runaterra’s repositories.</div></blockquote>
+<div class="section" id="branching-model">
+<h2>Branching model<a class="headerlink" href="#branching-model" title="Permalink to this headline">¶</a></h2>
+<p>Runaterra’s basically uses the <a class="reference external" href="https://datasift.github.io/gitflow/IntroducingGitFlow.html">GitFlow</a> branching model (created by
+Vincent Driessen) with a couple of additional adjustments.</p>
+<div class="section" id="major-feature-vs-minor-feature">
+<h3><strong>Major Feature vs Minor Feature</strong><a class="headerlink" href="#major-feature-vs-minor-feature" title="Permalink to this headline">¶</a></h3>
+<p>Each service’s major functionalities are considered <strong>major features</strong>
+which are composed of several <strong>minor features</strong> that work together.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Major features are usually accessed by final users or client
+services.</li>
+<li>Minor features are usually used within its own service in the
+form of modules or methods.</li>
+</ul>
+</div></blockquote>
+<p>Lets take as an example the <strong>Accounting</strong> service, some of its features
+are:</p>
+<ul class="simple">
+<li><strong>Processing of TSS files.</strong></li>
+<li><strong>Processing of 606 files.</strong></li>
+</ul>
+<p>In order to provide this functionalities some internal tasks need to be
+executed.</p>
+<ul class="simple">
+<li><strong>Processing of TSS files.</strong><ul>
+<li>Upload the file to server</li>
+<li>Process the file as TSS</li>
+<li>Retrieve desired information</li>
+<li>Output result file.</li>
+</ul>
+</li>
+<li><strong>Processing of 606 files.</strong><ul>
+<li>Upload the file to server</li>
+<li>Process the file as 606</li>
+<li>Retrieve desired information</li>
+<li>Output result file.</li>
+</ul>
+</li>
+</ul>
+<p>Each of these small tasks correspond to <strong>minor features</strong> in its
+service.</p>
+<p>Next, some of these minor features are <em>common</em> to both processes and
+should be treated as such. Therefore a resulting distribution would look
+like this:</p>
+<ul class="simple">
+<li><strong>Common (Major)</strong><ul>
+<li>Upload the file to server (minor)</li>
+<li>Output result file (minor)</li>
+</ul>
+</li>
+<li><strong>Processing of TSS files (Major)</strong><ul>
+<li>Process the file as TSS (minor)</li>
+<li>Retrieve desired information (minor)</li>
+</ul>
+</li>
+<li><strong>Processing of 606 files (Major)</strong><ul>
+<li>Process the file as 606 (minor)</li>
+<li>Retrieve desired information (minor)</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="naming">
+<h3><strong>Naming</strong>:<a class="headerlink" href="#naming" title="Permalink to this headline">¶</a></h3>
+<p>To improve organization branch naming should follow the next standard.</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">MAJOR-FEATURE_brief-change-description</span></code></li>
+</ul>
+<p>Example:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">TSS-FILE_fixed-error-with-total-invoice-field</span></code></li>
+</ul>
+</div>
+</div>
+<div class="section" id="pull-requests-and-merging-to-develop">
+<h2>Pull Requests and Merging to develop<a class="headerlink" href="#pull-requests-and-merging-to-develop" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="merging-to-master-releases">
+<h2>Merging to master (Releases)<a class="headerlink" href="#merging-to-master-releases" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="code-style">
+<h1>Code-Style<a class="headerlink" href="#code-style" title="Permalink to this headline">¶</a></h1>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Git and Github</a><ul>
+<li><a class="reference internal" href="#branching-model">Branching model</a><ul>
+<li><a class="reference internal" href="#major-feature-vs-minor-feature"><strong>Major Feature vs Minor Feature</strong></a></li>
+<li><a class="reference internal" href="#naming"><strong>Naming</strong>:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pull-requests-and-merging-to-develop">Pull Requests and Merging to develop</a></li>
+<li><a class="reference internal" href="#merging-to-master-releases">Merging to master (Releases)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#code-style">Code-Style</a></li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Standards-and-Guidelines.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Runaterra 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, jvinas.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.5.
+    </div>
+  </body>
+</html>

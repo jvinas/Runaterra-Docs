@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Services groups &#8212; Runaterra 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Runaterra 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Welcome to our hosting and deployment page, here you’ll learn most of
+what you need to understand how and where Runaterra is deployed. Also:</p>
+<ul class="simple">
+<li>How services are distributed between hosts.</li>
+<li>How they should behave in relation to external services that are
+managed by other teams.</li>
+<li>How is the project’s codebase organized.</li>
+</ul>
+<p>If you have not read about Runaterra’s architecture we recommend you to
+do it <a class="reference external" href="Architecture">here</a>.</p>
+<div class="section" id="services-groups">
+<h1>Services groups<a class="headerlink" href="#services-groups" title="Permalink to this headline">¶</a></h1>
+<p>Services running in runnaterra can be divided into 3 logical groups:</p>
+<ul class="simple">
+<li><strong>Application Front-end</strong><ul>
+<li><a class="reference external" href="Architecture#dashboard-ekko">Dashboard</a> (Ekko)</li>
+</ul>
+</li>
+<li><strong>Application Back-end</strong><ul>
+<li><a class="reference external" href="Architecture#human-resources-taric">Human Resources</a> (Taric)</li>
+<li><a class="reference external" href="Architecture#accounting-teemo">Accounting</a> (Teemo)</li>
+<li><a class="reference external" href="Architecture#notifications-karma">Notifications</a> (Karma)</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Services-groups" src="https://i.imgsafe.org/e396d78a54.png" /></p>
+<div class="section" id="services-host-distribution">
+<h2>Services host distribution<a class="headerlink" href="#services-host-distribution" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Services-groups" src="https://i.imgsafe.org/e396d78a54.png" /></p>
+</div>
+<div class="section" id="codebase-and-deployment">
+<h2>Codebase and deployment<a class="headerlink" href="#codebase-and-deployment" title="Permalink to this headline">¶</a></h2>
+<p>Every service is deployed independently of all others and counts with
+its own repository in which it <strong>must</strong> contain the following files :</p>
+<ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">README.md</span></code>: contains all documentation specific to this service.
+(This can be replaced with a wiki page if needed)</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">SERVICENAME-prod-bootstrap.sh</span></code>: shell script which sets up all
+necessary configurations for the production environment.</p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">SERVICENAME-dev-bootstrap.sh</span></code>: shell script which sets up all
+necessary configurations for development.</p>
+<blockquote>
+<div><p>This repository only serves as a reference central point for
+Runaterra’s entire codebase.</p>
+<p>Because is recommended for the development environment setup to be
+done using <a class="reference external" href="https://www.vagrantup.com/">Vagrant</a> (see, <a class="reference external" href="Initial-Setup">initial Setup</a>), bootstrap.sh files
+must take care of the complete installation of the environment.</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="continous-integration">
+<h2>Continous integration<a class="headerlink" href="#continous-integration" title="Permalink to this headline">¶</a></h2>
+<p>To improve the deployment process, continuous integration with
+<a class="reference external" href="https://jenkins.io/">Jenkins</a> is setup for each service within a job named
+`runaterra_SERVICENAME(See Runaterra’s <a class="reference internal" href="#all-links">All Links</a> Page).</p>
+<hr class="docutils" />
+<p>To start setting your environment and get into work visit out <a class="reference external" href="Initial-Setup">initial
+Setup</a> page.</p>
+<span class="target" id="all-links"></span></div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Services groups</a><ul>
+<li><a class="reference internal" href="#services-host-distribution">Services host distribution</a></li>
+<li><a class="reference internal" href="#codebase-and-deployment">Codebase and deployment</a></li>
+<li><a class="reference internal" href="#continous-integration">Continous integration</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Hosting-and-Deployment.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Runaterra 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, jvinas.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.5.
+    </div>
+  </body>
+</html>

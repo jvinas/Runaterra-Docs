@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Overview &#8212; Runaterra 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Runaterra 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Welcome to Runaterra’s project architecture page.</p>
+<p>In here you’ll find information about Runaterra’s <a class="reference external" href="https://en.wikipedia.org/wiki/Service-oriented_architecture">service oriented
+architecture</a>.</p>
+<div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>Runaterra is divided into the following services:</p>
+<ul class="simple">
+<li><a class="reference external" href="#dashboard-ekko">Dashboard</a> (<strong>Ekko</strong>)</li>
+<li><a class="reference external" href="#human-resources-taric">Human Resources</a> (<strong>Taric</strong>)</li>
+<li><a class="reference external" href="#accounting-teemo">Accounting</a> (<strong>Teemo</strong>)</li>
+<li><a class="reference external" href="#notifications-karma">Notifications</a> (<strong>Karma</strong>)</li>
+<li><a class="reference external" href="#user-authentication">User Authentication</a> (<strong>Nami</strong>)</li>
+</ul>
+<p><img alt="Architecture-diagram" src="https://i.imgsafe.org/e3cb9c883a.png" /></p>
+<div class="section" id="dashboard-ekko">
+<h2>Dashboard (<strong>Ekko</strong>)<a class="headerlink" href="#dashboard-ekko" title="Permalink to this headline">¶</a></h2>
+<p>Provides and unify web-based user interface for all Runaterra’s
+services.</p>
+</div>
+<div class="section" id="human-resources-taric">
+<h2>Human Resources (<strong>Taric</strong>)<a class="headerlink" href="#human-resources-taric" title="Permalink to this headline">¶</a></h2>
+<p>Provides all functionalities relating to human resources department.</p>
+<p>More specifically:</p>
+<ul class="simple">
+<li>Employee’s management (Registration, deletion, etc…).</li>
+<li>Vacations management.</li>
+</ul>
+</div>
+<div class="section" id="accounting-teemo">
+<h2>Accounting (<strong>Teemo</strong>)<a class="headerlink" href="#accounting-teemo" title="Permalink to this headline">¶</a></h2>
+<p>Provides all functionalities relating to the accounting department.</p>
+<p>More specifically:</p>
+<ul class="simple">
+<li>Payroll processing.</li>
+<li>Accounting files processing (606, TSS, etc…)</li>
+</ul>
+</div>
+<div class="section" id="notifications-karma">
+<h2>Notifications (<strong>Karma</strong>)<a class="headerlink" href="#notifications-karma" title="Permalink to this headline">¶</a></h2>
+<p>Provides a single point of integration for email notification scheduling
+processes. This is intended to be used by all services who don’t wish to
+handle email notifications to be sent within the company by themselves.</p>
+<p>More specifically it provides an interface to:</p>
+<ul class="simple">
+<li>Send an email at the moment when the request is made.</li>
+<li>Schedule an email to be sent in the future.</li>
+<li>Schedule an email to be send recurrently.</li>
+</ul>
+</div>
+<div class="section" id="user-authentication-nami">
+<h2>User Authentication (<strong>Nami</strong>)<a class="headerlink" href="#user-authentication-nami" title="Permalink to this headline">¶</a></h2>
+<p>Provides client services with a single point of integration for managing
+user authentication.</p>
+<hr class="docutils" />
+<p>All communication between services its done through <a class="reference external" href="http://www.restapitutorial.com/lessons/whatisrest.html">REST</a> APIs using
+<a class="reference external" href="http://www.json.org/">JSON</a> formatted requests and responses.</p>
+<hr class="docutils" />
+<p>To learn how and where Runaterra is running services and codebase are
+hosted. Visit our <a class="reference external" href="hosting-and-deployment">Hosting and Deployment</a> page. For information on how
+to set your environment and get to work visit our <a class="reference external" href="Initial-Setup">Initial setup</a> page.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Overview</a><ul>
+<li><a class="reference internal" href="#dashboard-ekko">Dashboard (<strong>Ekko</strong>)</a></li>
+<li><a class="reference internal" href="#human-resources-taric">Human Resources (<strong>Taric</strong>)</a></li>
+<li><a class="reference internal" href="#accounting-teemo">Accounting (<strong>Teemo</strong>)</a></li>
+<li><a class="reference internal" href="#notifications-karma">Notifications (<strong>Karma</strong>)</a></li>
+<li><a class="reference internal" href="#user-authentication-nami">User Authentication (<strong>Nami</strong>)</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Architecture.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Runaterra 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, jvinas.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.5.
+    </div>
+  </body>
+</html>

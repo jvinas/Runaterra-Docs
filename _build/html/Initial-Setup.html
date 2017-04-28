@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Development environment setup &#8212; Runaterra 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Runaterra 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Welcome to runaterra’s initial setup page.</p>
+<p>This page is divided in three sections:</p>
+<ul class="simple">
+<li><a class="reference external" href="#development-environment-setup">Development environment setup</a></li>
+<li><a class="reference external" href="#QA-environment-setup">QA environment setup</a></li>
+<li><a class="reference external" href="#production-environment-setup">Production environment setup</a></li>
+</ul>
+<div class="section" id="development-environment-setup">
+<h1>Development environment setup<a class="headerlink" href="#development-environment-setup" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div>It is recommended to use <a class="reference external" href="https://www.vagrantup.com/">Vagrant</a> in order to avoid possible
+errors at the moment of setting up your environment.</div></blockquote>
+<p>Because of Runaterra’s <a class="reference external" href="Architecture">architecture</a> each service lives in its own
+repository and all development related to that specific service should
+be done on it. This makes the process of setting a development
+environment a tedious task. Luckily, git counts with <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">submodules</a> to
+help us in this kind of situations.</p>
+<p>In order to setup an specific service follow the instructions listed in
+its repository’s <strong>README</strong> or <strong>Wiki page</strong>. Instead, if you wish to
+setup all services at once you have the following options:</p>
+<ul class="simple">
+<li>Use Vagrant (<a class="reference external" href="https://www.vagrantup.com/downloads.html">Download</a>)<ol class="arabic">
+<li>Execute this in your command line
+<code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--recursive</span> <span class="pre">https://github.com/intellisys/intranet</span></code></li>
+<li>Execute <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">up</span></code></li>
+<li>Execute <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">ssh</span></code></li>
+<li>Inside of the vagrant’s virtual machine execute go into
+<code class="docutils literal"><span class="pre">/vagrant/</span></code> and execute <code class="docutils literal"><span class="pre">.</span> <span class="pre">run-all-services.sh</span></code></li>
+<li>All set! Now you can access runaterra’s web dashboard on
+<code class="docutils literal"><span class="pre">http://192.168.100.1</span></code></li>
+</ol>
+</li>
+<li>Manual setup<ol class="arabic">
+<li>Execute this in your command line
+<code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--recursive</span> <span class="pre">https://github.com/intellisys/intranet</span></code></li>
+<li>Go into every service subdirectory and run its
+`SERVICENAME-dev-bootstrap.sh’ file.</li>
+<li>Go into the project’s root folder and run the file
+<code class="docutils literal"><span class="pre">run-all-services.sh</span></code></li>
+<li>All set! Now you can access runaterra’s web dashboard on
+<code class="docutils literal"><span class="pre">http://localhost:8000</span></code></li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="section" id="qa-environment-setup">
+<h1>QA environment setup<a class="headerlink" href="#qa-environment-setup" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li>Execute this in your command line
+<code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--recursive</span> <span class="pre">https://github.com/intellisys/intranet</span></code></li>
+<li>Go into every service subdirectory and run its
+`SERVICENAME-QA-bootstrap.sh’ file.</li>
+<li>Go into the project’s root folder and run the file
+<code class="docutils literal"><span class="pre">run-all-services.sh</span></code></li>
+</ol>
+</div>
+<div class="section" id="production-environment-setup">
+<h1>Production environment setup<a class="headerlink" href="#production-environment-setup" title="Permalink to this headline">¶</a></h1>
+<p>Some considerations must be taken when setting a production environment:</p>
+<ul class="simple">
+<li>Not all services run on the same host</li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Development environment setup</a></li>
+<li><a class="reference internal" href="#qa-environment-setup">QA environment setup</a></li>
+<li><a class="reference internal" href="#production-environment-setup">Production environment setup</a></li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Initial-Setup.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">Runaterra 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, jvinas.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.5.
+    </div>
+  </body>
+</html>
